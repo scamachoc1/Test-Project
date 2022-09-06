@@ -1,0 +1,12 @@
+<div className='main'>
+    <input type="text" placeholder='Search...' className="search" onChange={e => setQuery(e.target.value)} />
+    <ul className="list">
+    {/*Data.filter creates a new array with the filtered object, this filtered objects
+    then gets mapped in the DOM */}
+    {Data.filter(user => user.first_name.toLowerCase().includes(query.toLowerCase())).map((d) => (
+        <li key={d.id}>
+        {d.first_name}
+        </li>
+    ))}
+    </ul>
+</div>
